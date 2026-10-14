@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Camera Workshop</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+}
+
+#camera{
+width:250px;
+height:120px;
+background:black;
+margin:auto;
+border-radius:15px;
+position:relative;
+margin-top:50px;
+}
+
+#lens{
+width:70px;
+height:70px;
+background:gray;
+border-radius:50%;
+position:absolute;
+left:90px;
+top:25px;
+}
+
+button{
+padding:10px 15px;
+margin:10px;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+$("#red").click(function(){
+$("#camera").css("background","red");
+});
+
+$("#blue").click(function(){
+$("#camera").css("background","blue");
+});
+
+$("#zoom").click(function(){
+$("#lens").animate({
+width:'100px',
+height:'100px'
+});
+});
+
+$("#small").click(function(){
+$("#lens").animate({
+width:'70px',
+height:'70px'
+});
+});
+
+$("#reset").click(function(){
+
+$("#camera").css("background","black");
+
+$("#lens").css({
+width:'70px',
+height:'70px'
+});
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<h1>📸 Camera Workshop</h1>
+
+<div id="camera">
+
+<div id="lens"></div>
+
+</div>
+
+<br>
+
+<button id="red">Red Camera</button>
+
+<button id="blue">Blue Camera</button>
+
+<button id="zoom">Zoom Lens</button>
+
+<button id="small">Reduce Lens</button>
+
+<button id="reset">Reset</button>
+
+</body>
+</html>

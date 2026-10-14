@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Photography Package Order</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#eef3ff;
+}
+
+.container{
+width:700px;
+margin:auto;
+background:white;
+padding:20px;
+margin-top:30px;
+box-shadow:0px 0px 10px gray;
+}
+
+input{
+padding:8px;
+width:100px;
+}
+
+button{
+padding:10px 20px;
+background:#2575fc;
+color:white;
+border:none;
+}
+
+h2{
+color:green;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+$("#order").click(function(){
+
+let wedding=$("#wedding").val()*15000;
+let pre=$("#pre").val()*10000;
+let drone=$("#drone").val()*5000;
+let album=$("#album").val()*3000;
+
+let total=wedding+pre+drone+album;
+
+$("#total").html("Rs."+total);
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📸 Photography Package Order</h1>
+
+Wedding Shoot :
+<input type="number" id="wedding" value="1"><br><br>
+
+Pre Wedding :
+<input type="number" id="pre" value="1"><br><br>
+
+Drone Shoot :
+<input type="number" id="drone" value="1"><br><br>
+
+Album Design :
+<input type="number" id="album" value="1"><br><br>
+
+<button id="order">Place Order</button>
+
+<h2>Total Bill :
+<span id="total">Rs.0</span>
+</h2>
+
+</div>
+
+</body>
+</html>
